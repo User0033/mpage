@@ -13,6 +13,12 @@ const buttonRecipe = defineRecipe({
         borderRadius: 0,
         color: "white",
       },
+      linkOrangeButton: {
+        bg: "transparent",
+        borderRadius: 0,
+        color: "black",
+        fontSize: 16,
+      },
     },
   },
 });

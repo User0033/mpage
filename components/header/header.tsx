@@ -1,32 +1,47 @@
-import { Box, Button, HStack } from "@chakra-ui/react";
+import { Box, Button, HStack, Text } from "@chakra-ui/react";
 
 import {
   NavigationButton,
   navigationButtons,
 } from "@/components/utils/header-utils";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Header({ children }: any) {
   const router = useRouter();
+  const pathname = usePathname();
+  console.log("pathname", pathname);
+
   return (
-    <Box bg="red" h={20}>
-      <HStack>
-        {navigationButtons.map((button: NavigationButton) => {
-          return (
-            <Button
-              key={button.id}
-              onClick={() => {
-                router.push(button.route);
-              }}
-              //   borderRadius={0}
-              //   bg="brand.orange"
-              //   color="white"
-              variant="orangeButton"
-            >
-              {button.name}
-            </Button>
-          );
-        })}
+    <Box>
+      <HStack
+        pos="fixed"
+        top={0}
+        w="full"
+        h={20}
+        justifyContent="space-between"
+        bg="white"
+        px={32}
+      >
+        <Text fontSize={32} color="black">
+          LOGO
+        </Text>
+
+        <HStack>
+          {navigationButtons.map((button: NavigationButton) => {
+            return (
+              <Button
+                key={button.id}
+                onClick={() => {
+                  router.push(button.route);
+                }}
+                variant="linkOrangeButton"
+                color={pathname == button.route ? "brand.orange" : undefined}
+              >
+                {button.name}
+              </Button>
+            );
+          })}
+        </HStack>
       </HStack>
       {children}
     </Box>

@@ -1,11 +1,26 @@
-import { HStack } from "@chakra-ui/react";
-import Image from "next/image";
+import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <HStack bg="brand.red">Test</HStack>
-  
-    </div>
+    <Box h="160rem" bg="blue" pt={20}>
+      <HStack bg="brand.orange" h={64} justifyContent="center" spaceX={20}>
+        <VStack>
+          <Text fontSize={32}>500+</Text>
+          <Text fontSize={16}>Projects Completed</Text>
+        </VStack>
+        <VStack>
+          <Text fontSize={32}>500+</Text>
+          <Text fontSize={16}>Projects Completed</Text>
+        </VStack>
+        <VStack>
+          <Text fontSize={32}>500+</Text>
+          <Text fontSize={16}>Projects Completed</Text>
+        </VStack>
+        <VStack>
+          <Text fontSize={32}>500+</Text>
+          <Text fontSize={16}>Projects Completed</Text>
+        </VStack>
+      </HStack>
+    </Box>
   );
 }
