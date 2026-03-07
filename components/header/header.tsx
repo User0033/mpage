@@ -30,7 +30,7 @@ export default function Header({ children }: any) {
           cursor="pointer"
         >
           <Image
-            src="/images/logo.png"
+            src="./images/logo.png"
             objectFit="contain"
             height="50px"
             width="50px"

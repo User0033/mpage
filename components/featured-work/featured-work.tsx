@@ -1,11 +1,11 @@
-import { Box, Center, Heading, Image, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading, Image, SimpleGrid } from "@chakra-ui/react";
 
 export default function FeaturedWork() {
   const imageWorks = [
-    "/ar/head1.jpg",
-    "/ar/head2.jpg",
-    "/ar/lantern1.jpg",
-    "/ar/lantern2.jpg",
+    "./ar/head1.jpg",
+    "./ar/head2.jpg",
+    "./ar/lantern1.jpg",
+    "./ar/lantern2.jpg",
   ];
 
   return (
