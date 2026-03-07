@@ -1,9 +1,12 @@
 import {
+  CarouselNextTrigger,
   createSystem,
   defaultConfig,
   defineConfig,
   defineRecipe,
+  defineSlotRecipe,
 } from "@chakra-ui/react";
+import { carouselAnatomy } from "@chakra-ui/react/anatomy";
 
 const buttonRecipe = defineRecipe({
   variants: {
@@ -16,9 +19,31 @@ const buttonRecipe = defineRecipe({
       linkOrangeButton: {
         bg: "transparent",
         borderRadius: 0,
-        color: "black",
+        color: "white",
         fontSize: 16,
       },
+    },
+  },
+});
+
+export const carouselSlotRecipe = defineSlotRecipe({
+  slots: carouselAnatomy.keys(),
+  base: {
+    indicator: {
+      outline: "2px solid red",
+      outlineOffset: "2px",
+    },
+    nextTrigger: {
+      outline: "2px solid red",
+      outlineOffset: "2px",
+    },
+    prevTrigger: {
+      outline: "2px solid red",
+      outlineOffset: "2px",
+    },
+    root: {
+      outline: "2px solid red",
+      outlineOffset: "2px",
     },
   },
 });
