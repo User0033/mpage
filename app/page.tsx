@@ -1,20 +1,19 @@
+import { Box } from "@chakra-ui/react";
+
+import FeaturedWork from "@/components/featured-work/featured-work";
 import ImageCarousel from "@/components/image-carousel";
 import OfferSection from "@/components/offer/offer-section";
-import { Box, Heading, VStack } from "@chakra-ui/react";
+import ChooseUsSection from "@/components/choose-us/choose-us-section";
+import OurProcessesSection from "@/components/processes/our-processes-section";
 
 export default function Home() {
   return (
-    <Box h="160rem" bg="rgba(20, 20, 20, 0.98)" pt={20}>
+    <Box h="full" bg="rgba(20, 20, 20, 0.98)" pt={20}>
       <ImageCarousel />
-      <VStack bg="brand.orange" h={64} justifyContent="center" spaceY={5}>
-        <Heading> Why Choose Us?</Heading>
-        <Heading>
-          We don’t just create images; we create assets that help you win the
-          market. You get premium, industry-leading quality at a price point
-          designed to scale with your business.
-        </Heading>
-      </VStack>
+      <ChooseUsSection />
       <OfferSection />
+      <FeaturedWork />
+      <OurProcessesSection />
     </Box>
   );
 }

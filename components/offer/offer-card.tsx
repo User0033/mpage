@@ -1,11 +1,7 @@
 import { Box, Card, Image } from "@chakra-ui/react";
+import { CardType } from "@/components/utils/home-utils";
 
-import { OfferCardType } from "@/components/offer/offer-section";
-
-export default function OfferCard({
-  title,
-  description,
-}: Readonly<OfferCardType>) {
+export default function OfferCard({ title, description }: Readonly<CardType>) {
   return (
     <Card.Root flexDirection="row" overflow="hidden" maxW="xl">
       <Image

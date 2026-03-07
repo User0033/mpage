@@ -46,8 +46,10 @@ export default function Header({ children }: any) {
                 onClick={() => {
                   router.push(button.route);
                 }}
-                variant="linkOrangeButton"
-                color={pathname == button.route ? "brand.orange" : undefined}
+                bg="transparent"
+                borderRadius={0}
+                fontSize={16}
+                color={pathname == button.route ? "brand.orange" : "white"}
               >
                 {button.name}
               </Button>

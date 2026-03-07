@@ -1,5 +1,4 @@
 import {
-  CarouselNextTrigger,
   createSystem,
   defaultConfig,
   defineConfig,
