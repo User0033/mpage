@@ -81,8 +81,8 @@ const ActionButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 );
 
 const items = [
+  "./images/Sofa_03Test.png",
   "./images/Sofa_02Test.png",
-  "./images/Sofa_01Test.png",
   "./images/Sofa_01Test.png",
   "./images/Sofa_01Test.png",
 ];

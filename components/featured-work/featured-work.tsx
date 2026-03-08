@@ -9,15 +9,15 @@ export default function FeaturedWork() {
   ];
 
   return (
-    <Box pt={20} px={20}>
+    <Box pt={20} px={{ lg: 20, md: 2 }}>
       <Heading py={10} size="5xl" w="full" textAlign="center" mb={20}>
         Featured Work
       </Heading>
-      <SimpleGrid columns={2} w="fit-content" mx="auto" gap={5}>
+      <SimpleGrid columns={{ xl: 2, sm: 1 }} w="full" mx="auto" gap={5}>
         {imageWorks.map((src, index) => {
           return (
-            <Box key={"image" + index} w="fit-content">
-              <Image src={src} objectFit="contain" height="800px" />
+            <Box key={"image" + index} w="full" px={2}>
+              <Image src={src} objectFit="contain" />
             </Box>
           );
         })}

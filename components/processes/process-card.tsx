@@ -7,7 +7,7 @@ export default function ProcessCard({
   index,
 }: Readonly<CardType> & { index: number }) {
   return (
-    <Card.Root width="320px">
+    <Card.Root width="full" height="full">
       <Card.Body gap="2">
         <Avatar.Root size="lg" shape="rounded">
           {index}

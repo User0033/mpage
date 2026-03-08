@@ -11,19 +11,27 @@ export default function OurProcessesSection() {
         <Heading size="5xl">Our Process</Heading>
       </VStack>
 
-      <SimpleGrid columns={4} mx="auto" w="fit-content" gap={12}>
+      <SimpleGrid
+        columns={{ xl: 4, sm: 2 }}
+        w="full"
+        maxW="fit-content"
+        mx="auto"
+        gap={5}
+        px={5}
+      >
         {processeCards.map((card, index) => {
           return (
-            <ProcessCard
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              index={index + 1}
-            />
+            <Box px={{ md: 0, sm: 5 }} key={card.title}>
+              <ProcessCard
+                key={card.title}
+                title={card.title}
+                description={card.description}
+                index={index + 1}
+              />
+            </Box>
           );
         })}
       </SimpleGrid>
     </Box>
   );
 }
- 

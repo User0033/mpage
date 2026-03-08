@@ -10,7 +10,13 @@ export default function OfferSection() {
         <Heading color="brand.orange">Our services</Heading>
         <Heading size="5xl">What we offer</Heading>
       </VStack>
-      <SimpleGrid mx={72} gapY={10} gapX={2} minChildWidth="500px">
+      <SimpleGrid
+        mx={{ xl: 72, md: 0 }}
+        gapY={{ "2xl": 8, base: 5 }}
+        gapX={2}
+        minChildWidth={{ "2xl": "500px", lg: "300px", base: "200px" }}
+        px={5}
+      >
         {offerCards.map((card: CardType) => {
           return (
             <OfferCard
