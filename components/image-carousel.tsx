@@ -15,8 +15,8 @@ export default function ImageCarousel() {
         autoplay={{ delay: 2000 }}
         allowMouseDrag
       >
-        <Carousel.Control gap="4" width="full" position="relative" color="red">
-          <Carousel.PrevTrigger asChild bg="brand.orange">
+        <Carousel.Control gap="4" width="full" position="relative">
+          <Carousel.PrevTrigger asChild bg="brand.orange" hideBelow="lg">
             <ActionButton insetStart="4">
               <LuArrowLeft />
             </ActionButton>
@@ -34,14 +34,16 @@ export default function ImageCarousel() {
                     src={src}
                     alt={`Product ${index + 1}`}
                     objectFit="contain"
-                    height="800px"
+                    height="full"
+                    minH="300px"
+                    maxH="800px"
                   />
                 </Center>
               </Carousel.Item>
             ))}
           </Carousel.ItemGroup>
 
-          <Carousel.NextTrigger asChild bg="brand.orange">
+          <Carousel.NextTrigger asChild bg="brand.orange" hideBelow="lg">
             <ActionButton insetEnd="4">
               <LuArrowRight />
             </ActionButton>

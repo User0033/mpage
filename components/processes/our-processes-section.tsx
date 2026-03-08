@@ -5,7 +5,7 @@ import ProcessCard from "@/components/processes/process-card";
 
 export default function OurProcessesSection() {
   return (
-    <Box mt={"64"}>
+    <Box mt={{ base: 20, lg: 48 }}>
       <VStack my={10} pb={10}>
         <Heading color="brand.orange">How It Works</Heading>
         <Heading size="5xl">Our Process</Heading>
@@ -17,7 +17,7 @@ export default function OurProcessesSection() {
         maxW="fit-content"
         mx="auto"
         gap={5}
-        px={5}
+        px={{ base: 5, lg: 20 }}
       >
         {processeCards.map((card, index) => {
           return (
