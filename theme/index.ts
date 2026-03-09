@@ -55,6 +55,11 @@ const config = defineConfig({
   },
   theme: {
     tokens: {
+      fonts: {
+        heading: { value: "var(--font-electrolize)" },
+        body: { value: "var(--font-electrolize)" },
+        text: { value: "var(--font-electrolize)" },
+      },
       colors: {
         brand: {
           bg: { value: "#fffefa" },

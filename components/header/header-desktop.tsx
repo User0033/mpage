@@ -35,7 +35,7 @@ export default function HeaderDesktop() {
           height="50px"
           width="50px"
         />
-        <Heading color="brand.orange"> ꜰᴏxᴇʟ ᴠɪꜱᴜᴀʟꜱ</Heading>
+        <Heading color="brand.orange">Foxel Visuals</Heading>
       </HStack>
 
       <HStack>
@@ -48,9 +48,10 @@ export default function HeaderDesktop() {
               }}
               bg="transparent"
               borderRadius={0}
-              fontSize={16}
+              fontSize={18}
               color={pathname == button.route ? "brand.orange" : "white"}
               _hover={{ opacity: "0.6" }}
+              fontWeight={500}
             >
               {button.name}
             </Button>

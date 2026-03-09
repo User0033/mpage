@@ -49,7 +49,7 @@ export default function HeaderMobile() {
           height="50px"
           width="50px"
         />
-        <Heading color="brand.orange"> ꜰᴏxᴇʟ ᴠɪꜱᴜᴀʟꜱ</Heading>
+        <Heading color="brand.orange">Foxel Visuals</Heading>
       </HStack>
 
       <Drawer.Root
