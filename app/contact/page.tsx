@@ -1,25 +1,15 @@
 import {
   Box,
-  createListCollection,
   Field,
   Heading,
   Input,
-  Portal,
   RadioGroup,
-  Select,
   Text,
   Textarea,
   VStack,
 } from "@chakra-ui/react";
 
 export default function Contact() {
-  const frameworks = [
-    { label: "React.js", value: "react" },
-    { label: "Vue.js", value: "vue" },
-    { label: "Angular", value: "angular" },
-    { label: "Svelte", value: "svelte" },
-  ];
-
   return (
     <Box h="100vh" bg="rgba(20, 20, 20, 0.98)" pt={20}>
       <VStack mb={16}>
