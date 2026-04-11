@@ -1,10 +1,5 @@
 "use client";
-import {
-  Bitcount,
-  Bricolage_Grotesque,
-  Electrolize,
-  Michroma,
-} from "next/font/google";
+import { Electrolize } from "next/font/google";
 
 import Header from "@/components/header/header";
 import { Provider } from "@/components/ui/provider";
