@@ -68,12 +68,8 @@ export default function Contact() {
       needType: Yup.string().nonNullable("Must choose an option "),
     }),
 
-    onSubmit: (values) => {
-      console.log("values", values);
-    },
+    onSubmit: (values) => {},
   });
-
-  console.log("formik.errors", formik.errors);
 
   return (
     <Box minH="fit-content" h="100vh" bg="rgba(20, 20, 20, 0.98)" py={20}>
@@ -99,7 +95,7 @@ export default function Contact() {
         p={{ base: 5, md: 20 }}
         shadow={{ base: undefined, md: "xl" }}
         outline={{ base: "undefined", md: "solid #D07A25 5px" }}
-        backgroundImage="url('/images/logobackground.png')"
+        backgroundImage="url('./images/logobackground.png')"
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         bgSize="contain"
@@ -154,8 +150,6 @@ export default function Contact() {
               placeholder="Select type"
               value={formik.values.projectType ?? ""}
               onChange={(e) => {
-                console.log("e.target.value", e.target.value);
-
                 formik.setFieldValue(
                   FormikContactKeys.ProjectType,
                   e.target.value.length == 0 ? null : e.target.value,
