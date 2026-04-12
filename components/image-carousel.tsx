@@ -1,5 +1,14 @@
 import type { IconButtonProps } from "@chakra-ui/react";
-import { Box, Carousel, Center, IconButton, Image } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Box,
+  Carousel,
+  Center,
+  Heading,
+  IconButton,
+  Image,
+  VStack,
+} from "@chakra-ui/react";
 import { forwardRef } from "react";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 
@@ -23,21 +32,38 @@ export default function ImageCarousel() {
           </Carousel.PrevTrigger>
 
           <Carousel.ItemGroup width="full">
-            {items.map((src, index) => (
+            {items.map((item, index) => (
               <Carousel.Item
                 key={"image" + index}
                 index={index}
                 justifyContent="center"
               >
                 <Center>
-                  <Image
-                    src={src}
-                    alt={`Product ${index + 1}`}
-                    objectFit="contain"
-                    height="full"
-                    minH="300px"
-                    maxH="800px"
-                  />
+                  <VStack gap={0} pos="relative">
+                    <AspectRatio minW="100vw" ratio={21 / 9}>
+                      <Image
+                        src={item.url}
+                        alt={`Product ${index + 1}`}
+                        objectFit="contain"
+                      />
+                    </AspectRatio>
+                    <Box
+                      w="full"
+                      h="full"
+                      pos="absolute"
+                      bg="rgba(20, 20, 20, 0.20)"
+                      bottom={0}
+                      pb={14}
+                    >
+                      <Heading size="3xl" px={5} textAlign="center" pt={5}>
+                        {item.title}
+                      </Heading>
+
+                      <Heading size="2xl" px={5} textAlign="center">
+                        {item.description}
+                      </Heading>
+                    </Box>
+                  </VStack>
                 </Center>
               </Carousel.Item>
             ))}
@@ -83,8 +109,22 @@ const ActionButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 );
 
 const items = [
-  "./images/Sofa_03Test.png",
-  "./images/Sofa_02Test.png",
-  "./images/Sofa_01Test.png",
-  "./images/Sofa_01Test.png",
+  {
+    url: "./images/Sofa_03Test.png",
+    title: "title1",
+    description: "description1",
+  },
+  {
+    url: "./images/Sofa_02Test.png",
+    title: "title2",
+    description: "description2",
+  },
+  { url: "./images/Sofa_01Test.png", title: "title3", description: "" },
+  { url: "./images/Sofa_01Test.png", title: "title4", description: "" },
+  { url: "./images/iphone17.png", title: "title5", description: "" },
+  {
+    url: "./images/Exterior01.png",
+    title: "Exterior",
+    description: "",
+  },
 ];
