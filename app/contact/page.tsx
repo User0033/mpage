@@ -13,38 +13,19 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
+import { useState } from "react";
 import * as Yup from "yup";
 
-enum ProjectType {
-  InteriorVisualization = 0,
-  ExteriorVisualization = 1,
-  ProductVisualization = 2,
-  ARInteractiveModel = 3,
-  Modelling3D = 4,
-}
-
-enum NeedType {
-  Question = 0,
-  Strategy = 1,
-}
-
-enum FormikContactKeys {
-  Name = "name",
-  Email = "email",
-  Message = "message",
-  ProjectType = "projectType",
-  NeedType = "needType",
-}
-
-type ContactFormFormik = {
-  name: string;
-  email: string;
-  message: string;
-  projectType: ProjectType | null;
-  needType: NeedType | null;
-};
+import { toaster, Toaster } from "@/components/ui/toaster";
+import {
+  ContactFormFormik,
+  FormikContactKeys,
+  ProjectType,
+} from "@/components/utils/contact-utils";
 
 export default function Contact() {
+  const [isSending, setIsSending] = useState(false);
+
   const formik = useFormik<ContactFormFormik>({
     initialValues: {
       name: "",
@@ -68,11 +49,41 @@ export default function Contact() {
       needType: Yup.string().nonNullable("Must choose an option "),
     }),
 
-    onSubmit: (values) => {},
+    onSubmit: async (values) => {
+      try {
+        setIsSending(true);
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        }).then((res) => {
+          setIsSending(false);
+          return res;
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          toaster.success({
+            title: "Email sent successfully!",
+            description: "We'll get back to you soon.",
+          });
+          formik.resetForm();
+        }
+      } catch (error) {
+        setIsSending(false);
+        console.log(error);
+        toaster.error({
+          title: "Error sending email",
+          description:
+            "An error occurred while sending your message. Please try again later.",
+        });
+      }
+    },
   });
 
   return (
     <Box minH="fit-content" h="100vh" bg="rgba(20, 20, 20, 0.98)" py={20}>
+      <Toaster />
       <VStack mb={{ base: 0, md: 16 }}>
         <Heading
           textAlign="center"
@@ -198,15 +209,18 @@ export default function Contact() {
             }}
           >
             <VStack textAlign="start" justifyContent="start">
-              <RadioGroup.Item value="question" w="full">
+              <RadioGroup.Item value="I have a few questions first" w="full">
                 <RadioGroup.ItemHiddenInput />
                 <RadioGroup.ItemIndicator />
                 <RadioGroup.ItemText>
-                  I have a few questions first.
+                  I have a few questions first
                 </RadioGroup.ItemText>
               </RadioGroup.Item>
 
-              <RadioGroup.Item value="strategy" w="full">
+              <RadioGroup.Item
+                value="I am ready to book a strategy session"
+                w="full"
+              >
                 <RadioGroup.ItemHiddenInput />
                 <RadioGroup.ItemIndicator />
                 <RadioGroup.ItemText>
@@ -249,6 +263,7 @@ export default function Contact() {
           color="white"
           type="submit"
           onClick={() => formik.handleSubmit()}
+          loading={isSending}
         >
           Send
         </Button>

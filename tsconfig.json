@@ -37,7 +37,7 @@
     "**/*.mts",
     "dist/types/**/*.ts",
     "dist/dev/types/**/*.ts"
-  ],
+, "components/sendmail.js"  ],
   "exclude": [
     "node_modules"
   ]

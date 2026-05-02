@@ -3,7 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "export",
   distDir: "dist",
-  /* config options here */
+  env: {
+    HOSTINGER_EMAIL: process.env.HOSTINGER_EMAIL,
+    HOSTINGER_PASSWORD: process.env.HOSTINGER_PASSWORD,
+  },
 };
 
 export default nextConfig;
