@@ -92,7 +92,7 @@ export default function Contact() {
           mt={20}
           color="brand.orange"
         >
-          Get in Touch with Foxel
+          Get in Touch with Foxel {process.env.HOSTINGER_EMAIL}
         </Heading>
         <Heading size="xl" px={5}>
           Fill out the form below, and our team will get back to you

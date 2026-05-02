@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     // Email options
     const mailOptions = {
       from: name,
-      to: "jotob62085@kynninc.com", // Where to send the email
+      to: process.env.HOSTINGER_EMAIL, // Where to send the email
       subject: `${name} send a submission`,
       html: `
         <b>Name: </b> ${name} <br/> <br/>
