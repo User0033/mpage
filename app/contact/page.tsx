@@ -81,6 +81,9 @@ export default function Contact() {
     },
   });
 
+  console.log("process.env.HOSTINGER_EMAIL", process.env.HOSTINGER_EMAIL);
+  console.log("process.env", process.env);
+
   return (
     <Box minH="fit-content" h="100vh" bg="rgba(20, 20, 20, 0.98)" py={20}>
       <Toaster />
@@ -93,6 +96,7 @@ export default function Contact() {
           color="brand.orange"
         >
           Get in Touch with Foxel {process.env.HOSTINGER_EMAIL}
+          Get in Touch with Foxel {process.env.HoSTINGER_EMAIL}
         </Heading>
         <Heading size="xl" px={5}>
           Fill out the form below, and our team will get back to you

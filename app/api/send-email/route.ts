@@ -27,12 +27,12 @@ export async function POST(request: NextRequest) {
       from: name,
       to: process.env.HOSTINGER_EMAIL, // Where to send the email
       subject: `${name} send a submission`,
-      html: `
-        <b>Name: </b> ${name} <br/> <br/>
-        <b>Email: </b> ${email} <br/> <br/>
-        <b>Project Type: </b> ${ProjectTypeLabels[projectType as ProjectType]} <br/> <br/>
-        <b>Need Type: </b> ${needType} <br/> <br/>
-        <b>Message: </b> ${message} <br/>
+      text: `
+        Name: ${name}
+        Email: ${email}
+        Project Type: ${ProjectTypeLabels[projectType as ProjectType]}
+        Need Type: ${needType}
+        Message: ${message}
       `,
     };
 
