@@ -9,7 +9,11 @@ export default function FeaturedWork() {
   ];
 
   return (
-    <Box pt={{ base: 5, lg: 20 }} px={{ lg: 20, md: 2 }}>
+    <Box
+      pt={{ base: 5, lg: 20 }}
+      px={{ lg: 20, md: 2 }}
+      bg="rgba(20, 20, 20, 0.98)"
+    >
       <Heading py={10} size="5xl" w="full" textAlign="center" mb={20}>
         Featured Work
       </Heading>
