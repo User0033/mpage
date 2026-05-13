@@ -8,7 +8,14 @@ import OurProcessesSection from "@/components/processes/our-processes-section";
 
 export default function Home() {
   return (
-    <Box h="full" pt={20}>
+    <Box
+      h="full"
+      pt={20}
+      backgroundImage="url('./images/bgPattern.png')"
+      backgroundPosition="center"
+      backgroundRepeat="repeat"
+      bgSize="contain"
+    >
       <ImageCarousel />
       <ChooseUsSection />
       <OfferSection />

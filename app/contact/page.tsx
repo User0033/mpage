@@ -82,7 +82,15 @@ export default function Contact() {
   });
 
   return (
-    <Box minH="fit-content" h="100vh" py={20}>
+    <Box
+      minH="fit-content"
+      h="100vh"
+      py={{ base: 10, lg: 20 }}
+      backgroundImage="url('./images/bgPattern.png')"
+      backgroundPosition="center"
+      backgroundRepeat="repeat"
+      bgSize="contain"
+    >
       <Toaster />
       <VStack mb={{ base: 0, md: 16 }}>
         <Heading
