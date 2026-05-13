@@ -1,6 +1,7 @@
 export type CardType = {
   title: string;
   description: string;
+  imageSrc?: string;
 };
 
 export const offerCards = [
@@ -8,26 +9,31 @@ export const offerCards = [
     title: "Interior Rendering",
     description:
       "Photorealistic renders that bring your interior concepts to life before construction begins exterior Visualization",
+    imageSrc: "./images/what-we-offer/Interior.jpg",
   },
   {
     title: "Exterior Rendering",
     description:
       "Stunning exterior visualizations that showcase architecture in its best light. Product Visualization ",
+    imageSrc: "./images/what-we-offer/Exterior.png",
   },
   {
     title: "Product Rendering",
     description:
       "Transform your product concepts into photorealistic marketing assets, perfect for catalogs, e-commerce, and high-impact advertising",
+    imageSrc: "./images/what-we-offer/ProductRendering.png",
   },
   {
     title: "AR/VR Products",
     description:
       "Bring your designs into the real world with interactive Augmented Reality. ",
+    imageSrc: "./images/what-we-offer/AR.jpg",
   },
   {
     title: "3D Modeling",
     description:
       "We prioritize clean topology and efficient UV mapping, ensuring every model is easy to integrate into your existing workflow.",
+    imageSrc: "./images/what-we-offer/3DModel.jpg",
   },
 ];
 
