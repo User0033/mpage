@@ -34,6 +34,7 @@ export default function HeaderDesktop() {
           objectFit="contain"
           height="50px"
           width="50px"
+          loading="lazy"
         />
         <Heading color="brand.orange">Foxel Visuals</Heading>
       </HStack>

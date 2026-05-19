@@ -16,7 +16,7 @@ export default function RootLayout(
 
   return (
     <html className={bricolage.variable} lang="en" suppressHydrationWarning>
-      <body>
+      <body style={{ backgroundColor: "rgba(20, 20, 20, 0.98)" }}>
         <Provider>
           <Header />
           {children}
