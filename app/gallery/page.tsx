@@ -1,4 +1,5 @@
-import { Box, HStack } from "@chakra-ui/react";
+import ModelViewer from "@/components/gallery/model-viewer";
+import { Box } from "@chakra-ui/react";
 
 export default function Gallery() {
   return (
@@ -10,6 +11,8 @@ export default function Gallery() {
       minH="100vh"
       maxH="full"
       pt={32}
-    ></Box>
+    >
+      <ModelViewer />
+    </Box>
   );
 }
