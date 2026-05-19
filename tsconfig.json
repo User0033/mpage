@@ -30,6 +30,7 @@
   },
   "include": [
     "./global.d.ts",
+    "./declarations.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

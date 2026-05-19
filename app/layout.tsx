@@ -1,4 +1,3 @@
-"use client";
 import { Electrolize } from "next/font/google";
 
 import Header from "@/components/header/header";
@@ -19,7 +18,8 @@ export default function RootLayout(
     <html className={bricolage.variable} lang="en" suppressHydrationWarning>
       <body>
         <Provider>
-          <Header>{children}</Header>
+          <Header />
+          {children}
         </Provider>
       </body>
     </html>
