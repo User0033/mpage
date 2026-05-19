@@ -3,24 +3,55 @@
 import { Box } from "@chakra-ui/react";
 import { useEffect } from "react";
 
-export default function ModelViewer() {
+type ModelViewerProps = {
+  src: string;
+  iosSrc: string;
+  w: string;
+  h: string;
+};
+
+export default function ModelViewer({
+  src,
+  iosSrc,
+  w = "100%",
+  h = "500px",
+}: Readonly<ModelViewerProps>) {
   useEffect(() => {
-    // Import the component only on the client
     import("@google/model-viewer");
   }, []);
 
   return (
-    <Box style={{ width: "100%", height: "500px" }} border="solid red 2px">
+    <Box
+      style={{ width: w, height: h }}
+      border="solid 4px"
+      borderColor="brand.orange"
+    >
       <model-viewer
-        src=".\ar-models\android\AR-Test\PTRCQT26QV5UJQ33.glb" // Your model file in the /public folder
+        src={src}
+        ios-src={iosSrc}
         ar
         ar-modes="webxr scene-viewer quick-look"
         camera-controls
         poster="/assets/poster.webp"
-        shadow-intensity="1"
-        style={{ width: "100%", height: "100%" }}
+        shadow-intensity="20"
+        style={{
+          width: "100%",
+          height: "100%",
+          textAlign: "center",
+        }}
       >
-        <button slot="ar-button">👋 View in your space</button>
+        <button
+          slot="ar-button"
+          style={{
+            right: 20,
+            background: "#D07A25",
+            padding: "6px 12px",
+            margin: "auto",
+            width: "100%",
+          }}
+        >
+          View in your space
+        </button>
       </model-viewer>
     </Box>
   );
