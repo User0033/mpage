@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  output: "export",
   distDir: "dist",
   env: {
     HOSTINGER_EMAIL: process.env.HOSTINGER_EMAIL,
